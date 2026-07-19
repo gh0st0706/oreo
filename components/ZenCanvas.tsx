@@ -50,7 +50,7 @@ export default function ZenCanvas() {
       {/* Title, top-left corner */}
     <div className="absolute top-16 left-1/2 -translate-x-1/2 z-10 w-full px-6 text-center">
   <h1 className="text-5xl sm:text-6xl md:text-7xl text-white drop-shadow-lg">
-    MEGGGGGGGGGGG
+    MEGGGGGGGGG
   </h1>
 
   <p
