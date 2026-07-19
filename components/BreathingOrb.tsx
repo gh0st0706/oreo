@@ -6,8 +6,12 @@ export default function BreathingOrb() {
       <div
         className="breathe rounded-full"
         style={{
-          width: 180,
-          height: 180,
+          width: "40vw",
+height: "40vw",
+maxWidth: 220,
+maxHeight: 220,
+minWidth: 140,
+minHeight: 140,
           background:
             "radial-gradient(circle, rgba(52,211,153,.7), rgba(16,185,129,.15), transparent)",
           boxShadow:
