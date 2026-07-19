@@ -4,6 +4,7 @@ import { useState } from "react";
 import BreathingOrb from "./BreathingOrb";
 import Ripple from "./Ripple";
 import Oreo from "./Oreo";
+import { quotes } from "./quotes";
 
 interface RippleData {
   id: number;
@@ -13,6 +14,7 @@ interface RippleData {
 
 export default function ZenCanvas() {
   const [ripples, setRipples] = useState<RippleData[]>([]);
+  const [quoteIndex, setQuoteIndex] = useState(0);
 
   function handleClick(e: React.MouseEvent<HTMLDivElement>) {
     const ripple = {
@@ -22,6 +24,7 @@ export default function ZenCanvas() {
     };
 
     setRipples((prev) => [...prev, ripple]);
+    setQuoteIndex((prev) => (prev + 1) % quotes.length);
 
     setTimeout(() => {
       setRipples((prev) => prev.filter((r) => r.id !== ripple.id));
@@ -44,13 +47,13 @@ export default function ZenCanvas() {
         <Ripple key={r.id} x={r.x} y={r.y} />
       ))}
 
-   {/* Title */}
-<div className="absolute top-6 left-6 text-left z-10">
-  <h1 className="text-3xl text-white">Hey Meg ✨</h1>
-  <p className="mt-2 text-base text-white/70 font-sans">
-    Take a deep breath.
-  </p>
-</div>
+      {/* Title, top-left corner */}
+      <div className="absolute top-6 left-6 text-left z-10 max-w-xs">
+        <h1 className="text-3xl text-white">Stressed?</h1>
+        <p key={quoteIndex} className="quote-fade mt-2 text-base text-white/70 font-sans">
+          {quotes[quoteIndex]}
+        </p>
+      </div>
     </main>
   );
 }
