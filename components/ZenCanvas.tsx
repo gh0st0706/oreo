@@ -49,8 +49,8 @@ export default function ZenCanvas() {
 
       {/* Title, top-left corner */}
       <div className="absolute top-6 left-6 text-left z-10 max-w-xs">
-        <h1 className="text-3xl text-white">Stressed?</h1>
-        <p key={quoteIndex} className="quote-fade mt-2 text-base text-white/70 font-sans">
+        <h1 className="text-9xl text-white">Stressed?</h1>
+        <p key={quoteIndex} className="quote-fade mt-2 text-3xl text-white/70 font-sans">
           {quotes[quoteIndex]}
         </p>
       </div>
